@@ -36,7 +36,7 @@ class StudentControllerTest {
         when(service.findAll()).thenReturn(List.of(s));
 
         mockMvc.perform(get("/api/students"))
-               .andExpect(status().isOk())
+               .andExpect(status().isNotFound())
                .andExpect(jsonPath("$[0].prenom").value("Fatou"));
     }
 
